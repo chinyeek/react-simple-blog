@@ -3,14 +3,16 @@ import BlogList from './BlogList';
 import useFetch from './useFetch';
 
 const Home = () => {
- 
-  const {data: blogs, isPending, error} = useFetch('http://localhost:8000/blogs');
+  
+  const fbDB = firebase.firestore();
+  const fbCol = fbDB.collection('blogs');
+  const {data: blogs, isPending, error} = useFetch(fbCol);
 
   return (
     <div className="Home">
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
-      {blogs && <BlogList prop1={blogs} prop2='All Blogs!' />}
+      {blogs && <BlogList blogs={blogs} />}
     </div>
   );
 }

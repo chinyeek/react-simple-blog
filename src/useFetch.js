@@ -1,33 +1,29 @@
 import {useEffect, useState} from 'react';
 
-const useFetch = (url) => {
+const useFetch = (dbRef) => {
 
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
+  function getBlogs(){
+    setIsPending(true);
+    dbRef.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setData(items);
+      setIsPending(false);
+    });
+  }
   // useEffect takes in two parameters
   // first parameter is the function that is going to run on every render
   // second parameter is an array which contain the dependencies. If we put in an empty array, then the function will ONLY run after the initial render
   useEffect(() => {
-    // fetch data from the JSON server
-    fetch(url)
-      .then(res => {
-        if(!res.ok){
-          throw Error('could not fetch the data for that resource');
-        }
-        return res.json();
-      })
-      .then(data => {
-        setData(data);
-        setIsPending(false);
-        setError(null);
-      })
-      .catch(err => {
-        setIsPending(false);
-        setError(err.message);
-      });
-  }, [url]);
+    // fetch data from firestore
+    getBlogs();
+  }, []);
 
   return {data, isPending, error};
 };
