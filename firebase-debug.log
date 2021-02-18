@@ -1,0 +1,40 @@
+[debug] [2021-02-18T14:13:48.810Z] ----------------------------------------------------------------------
+[debug] [2021-02-18T14:13:48.814Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\VWT39B3\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-02-18T14:13:48.814Z] CLI Version:   9.4.0
+[debug] [2021-02-18T14:13:48.814Z] Platform:      win32
+[debug] [2021-02-18T14:13:48.814Z] Node Version:  v12.18.4
+[debug] [2021-02-18T14:13:48.818Z] Time:          Thu Feb 18 2021 15:13:48 GMT+0100 (GMT+01:00)
+[debug] [2021-02-18T14:13:48.819Z] ----------------------------------------------------------------------
+[debug] [2021-02-18T14:13:48.819Z] 
+[debug] [2021-02-18T14:13:48.825Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=69686785&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-02-18T14:14:04.087Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g5YEPkjL7UhfiRjdLIRo_UK9aQpAD0fiNvYgwK3XQPPfFB7-DNzjQynsOnVU1Bdow","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2021-02-18T14:14:04.160Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=write EPROTO 27484:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:c:\ws\deps\openssl\openssl\ssl\record\ssl3_record.c:332:
+
+    at Request._callback (C:\Users\VWT39B3\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\VWT39B3\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at Request.onRequestError (C:\Users\VWT39B3\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:877:8)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:483:12)
+    at ClientRequest.onError (C:\Users\VWT39B3\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\tunnel-agent\index.js:179:21)
+    at Object.onceWrapper (events.js:422:26)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:483:12)
+    at TLSSocket.socketErrorListener (_http_client.js:426:9)
+    at TLSSocket.emit (events.js:315:20)
+    at TLSSocket.EventEmitter.emit (domain.js:483:12)
+    at errorOrDestroy (internal/streams/destroy.js:108:12)
+    at onwriteError (_stream_writable.js:424:5)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=69686785&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
