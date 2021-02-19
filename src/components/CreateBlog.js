@@ -14,8 +14,11 @@ const CreateBlog = () => {
         </textarea> 
         <label>Blog author:</label>
         <select>
-          <option value="mario">mario</option>
+          <option value="lindsay">lindsay</option>
+          <option value="emma">emma</option>
+          <option value="bjon">bjon</option>
         </select>
+        <button>Add blog</button>
       </form>
     </div>
   );
