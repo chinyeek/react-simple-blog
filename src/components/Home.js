@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
-import useFetch from './useFetch';
-import firebase from './firebase';
+import useFetch from '../hooks/useFetch';
+import firebase from '../firebase';
 
 const Home = () => {
-  
+ 
   const fbDB = firebase.firestore();
   const fbCol = fbDB.collection('blogs');
-  const {data: blogs, isPending, error} = useFetch(fbCol);
+
+  const {data: blogs, isPending, error} = useFetch(fbCol, false);
 
   return (
     <div className="Home">
